@@ -1,0 +1,13 @@
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 6
+names: ['blackpants', 'blackshoes', 'id lace', 'poloboy', 'pologirl', 'skirt']
+
+roboflow:
+  workspace: philip-fabrero-s-workspace
+  project: capstone-dataset-cteaf
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/philip-fabrero-s-workspace/capstone-dataset-cteaf/dataset/2

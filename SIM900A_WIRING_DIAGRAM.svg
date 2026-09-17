@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7fbff"/>
+      <stop offset="100%" stop-color="#eef4ff"/>
+    </linearGradient>
+    <linearGradient id="arduino" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f7a8c"/>
+      <stop offset="100%" stop-color="#125b67"/>
+    </linearGradient>
+    <linearGradient id="sim900a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5a5f73"/>
+      <stop offset="100%" stop-color="#3d4150"/>
+    </linearGradient>
+    <linearGradient id="psu" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b85c38"/>
+      <stop offset="100%" stop-color="#8f4326"/>
+    </linearGradient>
+    <linearGradient id="callout" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f6f8fc"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#17324d" flood-opacity="0.16"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#24415a"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#c23b22"/>
+    </marker>
+    <style>
+      .title { font: 700 42px Arial, Helvetica, sans-serif; fill: #12324a; }
+      .subtitle { font: 400 18px Arial, Helvetica, sans-serif; fill: #486177; }
+      .label { font: 700 22px Arial, Helvetica, sans-serif; fill: #17324d; }
+      .small { font: 400 16px Arial, Helvetica, sans-serif; fill: #17324d; }
+      .tiny { font: 400 14px Arial, Helvetica, sans-serif; fill: #335066; }
+      .pin { font: 700 15px Arial, Helvetica, sans-serif; fill: #ffffff; }
+      .wire { fill: none; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+      .wireThin { fill: none; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+      .note { font: 400 15px Arial, Helvetica, sans-serif; fill: #234055; }
+      .card { fill: url(#callout); stroke: #c8d4e3; stroke-width: 2; rx: 22; }
+      .panel { stroke: rgba(255,255,255,0.35); stroke-width: 2; rx: 30; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="1000" fill="url(#bg)"/>
+
+  <text x="80" y="80" class="title">SIM900A + Arduino Wiring Diagram</text>
+  <text x="80" y="115" class="subtitle">Direct SMS gateway for the school gate system using a DITO SIM card</text>
+
+  <!-- Arduino board -->
+  <g filter="url(#shadow)">
+    <rect x="90" y="190" width="560" height="560" rx="34" fill="url(#arduino)" class="panel"/>
+    <rect x="120" y="220" width="500" height="500" rx="26" fill="#184f5d" opacity="0.35"/>
+    <text x="170" y="250" class="label" fill="#ffffff">Arduino Uno / Mega</text>
+    <text x="170" y="280" class="small" fill="#d9f2f6">USB to computer for PHP serial communication</text>
+
+    <rect x="160" y="330" width="150" height="90" rx="18" fill="#c6dfe3" opacity="0.92"/>
+    <text x="195" y="367" class="small">USB Port</text>
+    <text x="182" y="393" class="tiny">to WAMP server PC</text>
+
+    <rect x="350" y="330" width="180" height="90" rx="18" fill="#d9e8ec" opacity="0.92"/>
+    <text x="392" y="367" class="small">Digital Pins</text>
+    <text x="379" y="393" class="tiny">D10 / D11 used</text>
+
+    <!-- pin labels -->
+    <rect x="140" y="455" width="110" height="42" rx="10" fill="#0e3640"/>
+    <text x="162" y="482" class="pin">D10 TX</text>
+
+    <rect x="140" y="515" width="110" height="42" rx="10" fill="#0e3640"/>
+    <text x="162" y="542" class="pin">D11 RX</text>
+
+    <rect x="140" y="575" width="110" height="42" rx="10" fill="#0e3640"/>
+    <text x="175" y="602" class="pin">GND</text>
+
+    <rect x="140" y="635" width="110" height="42" rx="10" fill="#0e3640"/>
+    <text x="165" y="662" class="pin">5V PSU</text>
+
+    <rect x="300" y="455" width="220" height="120" rx="18" fill="#ffffff" opacity="0.18"/>
+    <text x="324" y="492" class="small" fill="#ffffff">Serial bridge sketch</text>
+    <text x="324" y="522" class="tiny" fill="#e6fbff">Receives AT|phone|message</text>
+    <text x="324" y="546" class="tiny" fill="#e6fbff">Forwards SMS commands to SIM900A</text>
+  </g>
+
+  <!-- SIM900A board -->
+  <g filter="url(#shadow)">
+    <rect x="850" y="210" width="640" height="520" rx="34" fill="url(#sim900a)" class="panel"/>
+    <text x="900" y="250" class="label" fill="#ffffff">SIM900A GSM Module</text>
+    <text x="900" y="280" class="small" fill="#eef1ff">Sends SMS directly through the DITO network</text>
+
+    <rect x="900" y="330" width="200" height="90" rx="18" fill="#73798f" opacity="0.95"/>
+    <text x="928" y="367" class="small" fill="#ffffff">SIM Slot</text>
+    <text x="922" y="393" class="tiny" fill="#edf2ff">Insert activated DITO SIM</text>
+
+    <rect x="1140" y="330" width="200" height="90" rx="18" fill="#73798f" opacity="0.95"/>
+    <text x="1172" y="367" class="small" fill="#ffffff">Antenna</text>
+    <text x="1158" y="393" class="tiny" fill="#edf2ff">Screw on firmly</text>
+
+    <rect x="900" y="450" width="440" height="160" rx="22" fill="#4d5265" opacity="0.95"/>
+    <text x="930" y="490" class="small" fill="#ffffff">AT Command Flow</text>
+    <text x="930" y="525" class="tiny" fill="#eef1ff">Arduino sends SMS command</text>
+    <text x="930" y="553" class="tiny" fill="#eef1ff">SIM900A dials SMS over GSM</text>
+    <text x="930" y="581" class="tiny" fill="#eef1ff">Module returns OK / ERROR</text>
+  </g>
+
+  <!-- Power supply -->
+  <g filter="url(#shadow)">
+    <rect x="870" y="790" width="610" height="150" rx="28" fill="url(#psu)" class="panel"/>
+    <text x="915" y="845" class="label" fill="#ffffff">External 5V 2A Power Supply</text>
+    <text x="915" y="880" class="small" fill="#fff1ea">Required for SIM900A peak current during SMS transmission</text>
+  </g>
+
+  <!-- Voltage divider callout -->
+  <g filter="url(#shadow)">
+    <rect x="130" y="790" width="640" height="150" rx="28" fill="url(#callout)" stroke="#d4dde8" stroke-width="2"/>
+    <text x="170" y="845" class="label">Voltage Divider for SIM900A RX</text>
+    <text x="170" y="880" class="small">Use 10kΩ from Arduino TX to signal node, then 20kΩ from node to GND</text>
+    <text x="170" y="910" class="small">This reduces 5V output to about 3.3V for the SIM900A RX pin</text>
+  </g>
+
+  <!-- Wires -->
+  <!-- D10 TX to voltage divider to SIM900A RX -->
+  <path d="M 250 476 C 330 476, 360 476, 430 476" class="wire" stroke="#1d3557" marker-end="url(#arrow)"/>
+  <circle cx="340" cy="476" r="10" fill="#1d3557"/>
+  <circle cx="370" cy="476" r="10" fill="#1d3557"/>
+  <text x="302" y="454" class="note">Arduino D10 TX</text>
+  <text x="372" y="454" class="note">10kΩ</text>
+
+  <path d="M 430 476 C 500 476, 525 476, 600 476 C 700 476, 780 420, 900 420" class="wire" stroke="#1d3557" marker-end="url(#arrow)"/>
+  <text x="665" y="448" class="note">to SIM900A RX</text>
+
+  <!-- D11 RX direct to SIM900A TX -->
+  <path d="M 250 536 C 350 536, 500 560, 650 560 C 770 560, 815 540, 900 540" class="wire" stroke="#2a9d8f" marker-end="url(#arrow)"/>
+  <text x="346" y="516" class="note">Arduino D11 RX</text>
+  <text x="700" y="582" class="note">SIM900A TX</text>
+
+  <!-- GND common -->
+  <path d="M 250 596 C 360 596, 500 640, 650 660 C 760 674, 830 700, 900 860" class="wire" stroke="#6c757d" marker-end="url(#arrow)"/>
+  <text x="360" y="623" class="note">Common GND</text>
+
+  <!-- PSU to SIM900A power -->
+  <path d="M 1180 790 C 1180 760, 1180 740, 1180 690" class="wire" stroke="#c23b22" marker-end="url(#arrowRed)"/>
+  <text x="1210" y="760" class="note" fill="#a9351f">5V to VCC</text>
+
+  <path d="M 1040 790 C 990 760, 950 735, 930 690" class="wireThin" stroke="#6c757d" marker-end="url(#arrow)"/>
+  <text x="915" y="748" class="note">PSU GND to common ground</text>
+
+  <!-- SIM card and antenna arrows -->
+  <path d="M 1000 330 C 1000 315, 1000 304, 1000 292" class="wireThin" stroke="#ffffff" marker-end="url(#arrow)"/>
+  <path d="M 1240 330 C 1240 315, 1240 304, 1240 292" class="wireThin" stroke="#ffffff" marker-end="url(#arrow)"/>
+
+  <!-- Legend -->
+  <g filter="url(#shadow)">
+    <rect x="1300" y="60" width="220" height="120" rx="20" fill="#ffffff" stroke="#d4dde8" stroke-width="2"/>
+    <text x="1322" y="95" class="label">Legend</text>
+    <line x1="1325" y1="122" x2="1380" y2="122" stroke="#1d3557" stroke-width="8" stroke-linecap="round"/>
+    <text x="1390" y="128" class="tiny">TX data wire</text>
+    <line x1="1325" y1="152" x2="1380" y2="152" stroke="#2a9d8f" stroke-width="8" stroke-linecap="round"/>
+    <text x="1390" y="158" class="tiny">RX data wire</text>
+  </g>
+
+  <!-- Footer note -->
+  <text x="80" y="975" class="subtitle">Important: do not power SIM900A from the Arduino 5V pin. Use a separate 5V 2A supply and keep all grounds connected together.</text>
+</svg>

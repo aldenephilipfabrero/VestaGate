@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 4
+names: ['id lace', 'pologirl', 'shoes', 'skirt']
+
+roboflow:
+  workspace: capstone-04alt
+  project: final-data-set-kmqf3
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/capstone-04alt/final-data-set-kmqf3/dataset/1

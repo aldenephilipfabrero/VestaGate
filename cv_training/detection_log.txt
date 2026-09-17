@@ -1,0 +1,9 @@
+==================================================
+UNIFORM DETECTION SERVER
+==================================================
+✓ Uniform model loaded: C:\wamp64\www\school_gate\cv_training\runs\detect\uniform_detector\weights\best.pt
+✓ Person detection model loaded (yolov8n.pt)
+
+Starting on http://localhost:5000
+ * Serving Flask app 'detection_server'
+ * Debug mode: off

@@ -1,0 +1,16 @@
+# Windows device-name artifact
+COM6
+
+# Local/runtime files
+$null
+__pycache__/
+logs/
+runs/
+violations_images/
+
+# Local credentials and secrets
+admin_credentials.php
+.env
+
+# Large local model files
+*.pt

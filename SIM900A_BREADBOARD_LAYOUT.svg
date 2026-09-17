@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1100" viewBox="0 0 1800 1100">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4f7fb"/>
+      <stop offset="100%" stop-color="#e9eff6"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f7f9fc"/>
+    </linearGradient>
+    <linearGradient id="arduino" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1d6f83"/>
+      <stop offset="100%" stop-color="#144d59"/>
+    </linearGradient>
+    <linearGradient id="breadboard" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f6f8fc"/>
+    </linearGradient>
+    <linearGradient id="sim900a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4f5668"/>
+      <stop offset="100%" stop-color="#343a48"/>
+    </linearGradient>
+    <linearGradient id="psu" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b65e39"/>
+      <stop offset="100%" stop-color="#913f23"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#17324d" flood-opacity="0.14"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#20435e"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#c0392b"/>
+    </marker>
+    <style>
+      .title { font: 700 40px "Segoe UI", Arial, sans-serif; fill: #10263a; letter-spacing: 0.2px; }
+      .subtitle { font: 400 18px "Segoe UI", Arial, sans-serif; fill: #567189; }
+      .section { font: 700 18px "Segoe UI", Arial, sans-serif; fill: #10263a; }
+      .label { font: 700 18px "Segoe UI", Arial, sans-serif; fill: #10263a; }
+      .small { font: 400 14px "Segoe UI", Arial, sans-serif; fill: #42586f; }
+      .tiny { font: 400 12px "Segoe UI", Arial, sans-serif; fill: #5d7287; }
+      .pin { font: 700 13px "Segoe UI", Arial, sans-serif; fill: #ffffff; }
+      .wire { fill: none; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+      .wireThin { fill: none; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .callout { fill: url(#card); stroke: #d6dee8; stroke-width: 1.5; rx: 18; }
+      .panel { fill: url(#card); stroke: #d6dee8; stroke-width: 1.5; rx: 28; }
+      .hole { fill: #b7c2cf; opacity: 0.28; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1800" height="1100" fill="url(#bg)"/>
+
+  <text x="70" y="72" class="title">SIM900A Breadboard Wiring Layout</text>
+  <text x="70" y="106" class="subtitle">Professional breadboard view for Arduino, SIM900A, voltage divider, and external power</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="170" width="350" height="390" rx="28" fill="url(#arduino)"/>
+    <text x="108" y="220" class="label" fill="#ffffff">Arduino</text>
+    <text x="108" y="246" class="small" fill="#dceff3">USB serial to the PC / PHP app</text>
+    <rect x="108" y="300" width="130" height="40" rx="10" fill="#0f3640"/>
+    <text x="135" y="326" class="pin">D10 TX</text>
+    <rect x="108" y="352" width="130" height="40" rx="10" fill="#0f3640"/>
+    <text x="135" y="378" class="pin">D11 RX</text>
+    <rect x="108" y="404" width="130" height="40" rx="10" fill="#0f3640"/>
+    <text x="151" y="430" class="pin">GND</text>
+    <rect x="108" y="456" width="130" height="40" rx="10" fill="#0f3640"/>
+    <text x="152" y="482" class="pin">5V</text>
+    <text x="108" y="525" class="tiny" fill="#cfe8ee">Used with SoftwareSerial on D10 / D11</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="460" y="170" width="860" height="620" rx="34" fill="url(#breadboard)"/>
+    <text x="500" y="220" class="label">Breadboard</text>
+    <text x="500" y="246" class="small">Voltage divider placed on the left side of the main terminal area</text>
+    <line x1="520" y1="295" x2="1260" y2="295" stroke="#d9534f" stroke-width="8" stroke-linecap="round"/>
+    <line x1="520" y1="337" x2="1260" y2="337" stroke="#34495e" stroke-width="8" stroke-linecap="round"/>
+    <text x="500" y="298" class="small" fill="#b03a2e">+5V rail</text>
+    <text x="500" y="340" class="small" fill="#2c3e50">GND rail</text>
+    <rect x="520" y="380" width="740" height="100" rx="16" fill="#edf2f8" stroke="#d7dfe8" stroke-width="1.5"/>
+    <text x="820" y="438" class="small" fill="#64798e">Center gap</text>
+    <g>
+      <circle cx="575" cy="430" r="6" class="hole"/>
+      <circle cx="615" cy="430" r="6" class="hole"/>
+      <circle cx="655" cy="430" r="6" class="hole"/>
+      <circle cx="695" cy="430" r="6" class="hole"/>
+      <circle cx="735" cy="430" r="6" class="hole"/>
+      <circle cx="775" cy="430" r="6" class="hole"/>
+      <circle cx="815" cy="430" r="6" class="hole"/>
+      <circle cx="855" cy="430" r="6" class="hole"/>
+      <circle cx="895" cy="430" r="6" class="hole"/>
+      <circle cx="935" cy="430" r="6" class="hole"/>
+      <circle cx="975" cy="430" r="6" class="hole"/>
+      <circle cx="1015" cy="430" r="6" class="hole"/>
+      <circle cx="1055" cy="430" r="6" class="hole"/>
+      <circle cx="1095" cy="430" r="6" class="hole"/>
+      <circle cx="1135" cy="430" r="6" class="hole"/>
+      <circle cx="1175" cy="430" r="6" class="hole"/>
+      <circle cx="1215" cy="430" r="6" class="hole"/>
+      <circle cx="575" cy="470" r="6" class="hole"/>
+      <circle cx="615" cy="470" r="6" class="hole"/>
+      <circle cx="655" cy="470" r="6" class="hole"/>
+      <circle cx="695" cy="470" r="6" class="hole"/>
+      <circle cx="735" cy="470" r="6" class="hole"/>
+      <circle cx="775" cy="470" r="6" class="hole"/>
+      <circle cx="815" cy="470" r="6" class="hole"/>
+      <circle cx="855" cy="470" r="6" class="hole"/>
+      <circle cx="895" cy="470" r="6" class="hole"/>
+      <circle cx="935" cy="470" r="6" class="hole"/>
+      <circle cx="975" cy="470" r="6" class="hole"/>
+      <circle cx="1015" cy="470" r="6" class="hole"/>
+      <circle cx="1055" cy="470" r="6" class="hole"/>
+      <circle cx="1095" cy="470" r="6" class="hole"/>
+      <circle cx="1135" cy="470" r="6" class="hole"/>
+      <circle cx="1175" cy="470" r="6" class="hole"/>
+      <circle cx="1215" cy="470" r="6" class="hole"/>
+      <circle cx="575" cy="510" r="6" class="hole"/>
+      <circle cx="615" cy="510" r="6" class="hole"/>
+      <circle cx="655" cy="510" r="6" class="hole"/>
+      <circle cx="695" cy="510" r="6" class="hole"/>
+      <circle cx="735" cy="510" r="6" class="hole"/>
+      <circle cx="775" cy="510" r="6" class="hole"/>
+      <circle cx="815" cy="510" r="6" class="hole"/>
+      <circle cx="855" cy="510" r="6" class="hole"/>
+      <circle cx="895" cy="510" r="6" class="hole"/>
+      <circle cx="935" cy="510" r="6" class="hole"/>
+      <circle cx="975" cy="510" r="6" class="hole"/>
+      <circle cx="1015" cy="510" r="6" class="hole"/>
+      <circle cx="1055" cy="510" r="6" class="hole"/>
+      <circle cx="1095" cy="510" r="6" class="hole"/>
+      <circle cx="1135" cy="510" r="6" class="hole"/>
+      <circle cx="1175" cy="510" r="6" class="hole"/>
+      <circle cx="1215" cy="510" r="6" class="hole"/>
+    </g>
+    <rect x="750" y="420" width="150" height="18" rx="9" fill="#d7b48c" stroke="#a97b50" stroke-width="1.5" transform="rotate(90 825 429)"/>
+    <rect x="750" y="485" width="150" height="18" rx="9" fill="#d7b48c" stroke="#a97b50" stroke-width="1.5" transform="rotate(90 825 494)"/>
+    <text x="722" y="398" class="small">10kΩ</text>
+    <text x="846" y="398" class="small">20kΩ</text>
+    <circle cx="825" cy="430" r="7" fill="#1d3557"/>
+    <circle cx="825" cy="494" r="7" fill="#7f8c8d"/>
+    <text x="842" y="436" class="tiny">signal node</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1380" y="170" width="350" height="390" rx="28" fill="url(#sim900a)"/>
+    <text x="1420" y="220" class="label" fill="#ffffff">SIM900A Module</text>
+    <text x="1420" y="246" class="small" fill="#e8edf7">Sends SMS over the GSM network</text>
+    <rect x="1420" y="290" width="270" height="72" rx="14" fill="#72798d" opacity="0.95"/>
+    <text x="1495" y="322" class="small" fill="#ffffff">SIM Card</text>
+    <text x="1472" y="346" class="tiny" fill="#edf2ff">DITO inserted and activated</text>
+    <rect x="1420" y="382" width="270" height="72" rx="14" fill="#72798d" opacity="0.95"/>
+    <text x="1500" y="414" class="small" fill="#ffffff">Antenna</text>
+    <text x="1488" y="438" class="tiny" fill="#edf2ff">securely attached</text>
+    <rect x="1420" y="474" width="270" height="72" rx="14" fill="#72798d" opacity="0.95"/>
+    <text x="1487" y="506" class="small" fill="#ffffff">VCC / GND</text>
+    <text x="1462" y="530" class="tiny" fill="#edf2ff">external 5V supply</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1380" y="760" width="350" height="170" rx="28" fill="url(#psu)"/>
+    <text x="1420" y="810" class="label" fill="#ffffff">5V 2A Power Supply</text>
+    <text x="1420" y="842" class="small" fill="#fff3ed">Dedicated supply for the SIM900A only</text>
+    <text x="1420" y="872" class="small" fill="#fff3ed">Do not power the module from Arduino 5V</text>
+  </g>
+
+  <path d="M 200 311 C 330 311, 440 395, 575 430" class="wire" stroke="#1f3d5a" marker-end="url(#arrow)"/>
+  <text x="238" y="286" class="small">Arduino D10 TX</text>
+  <path d="M 575 430 C 675 430, 725 430, 750 429" class="wire" stroke="#1f3d5a" marker-end="url(#arrow)"/>
+  <text x="618" y="416" class="tiny">10kΩ</text>
+  <path d="M 825 429 C 980 426, 1145 385, 1380 325" class="wire" stroke="#1f3d5a" marker-end="url(#arrow)"/>
+  <text x="1040" y="400" class="small">To SIM900A RX</text>
+  <path d="M 825 430 C 825 455, 825 478, 825 494" class="wireThin" stroke="#7a8794" marker-end="url(#arrow)"/>
+  <text x="842" y="484" class="tiny">20kΩ to GND</text>
+  <path d="M 200 365 C 360 365, 530 495, 1380 488" class="wire" stroke="#1e9a8a" marker-end="url(#arrow)"/>
+  <text x="238" y="344" class="small">Arduino D11 RX</text>
+  <text x="1600" y="478" class="small">SIM900A TX</text>
+  <path d="M 200 417 C 320 417, 455 520, 575 510" class="wire" stroke="#6b7684" marker-end="url(#arrow)"/>
+  <text x="238" y="446" class="small">Arduino GND</text>
+  <path d="M 575 510 C 875 520, 1110 525, 1380 515" class="wire" stroke="#6b7684" marker-end="url(#arrow)"/>
+  <text x="928" y="548" class="small">Common ground to SIM900A GND</text>
+  <path d="M 1555 760 C 1555 708, 1555 650, 1555 556" class="wire" stroke="#c0392b" marker-end="url(#arrowRed)"/>
+  <text x="1586" y="680" class="small" fill="#9e3728">+5V to SIM900A VCC</text>
+  <path d="M 1560 930 C 1405 930, 1245 865, 875 742 C 640 664, 465 585, 200 470" class="wireThin" stroke="#6b7684" marker-end="url(#arrow)"/>
+  <text x="1110" y="900" class="small">PSU GND to Arduino GND and SIM900A GND</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="620" width="350" height="180" rx="22" class="panel"/>
+    <text x="98" y="662" class="section">Legend</text>
+    <line x1="98" y1="695" x2="155" y2="695" stroke="#1f3d5a" stroke-width="6" stroke-linecap="round"/>
+    <text x="170" y="700" class="small">TX path</text>
+    <line x1="98" y1="728" x2="155" y2="728" stroke="#1e9a8a" stroke-width="6" stroke-linecap="round"/>
+    <text x="170" y="733" class="small">RX path</text>
+    <line x1="98" y1="761" x2="155" y2="761" stroke="#6b7684" stroke-width="6" stroke-linecap="round"/>
+    <text x="170" y="766" class="small">Ground</text>
+    <line x1="98" y1="794" x2="155" y2="794" stroke="#c0392b" stroke-width="6" stroke-linecap="round"/>
+    <text x="170" y="799" class="small">External 5V</text>
+  </g>
+
+  <text x="460" y="870" style="font: 600 14px 'Segoe UI', Arial, sans-serif; fill: #53667b;">Assembly notes:</text>
+  <text x="590" y="870" style="font: 400 13px 'Segoe UI', Arial, sans-serif; fill: #53667b;">Place the 10kΩ and 20kΩ resistors in series for the RX divider.</text>
+  <text x="460" y="896" style="font: 400 13px 'Segoe UI', Arial, sans-serif; fill: #53667b;">Keep all grounds common. Power SIM900A from a dedicated 5V 2A supply only.</text>
+  <text x="460" y="922" style="font: 400 13px 'Segoe UI', Arial, sans-serif; fill: #53667b;">Insert the DITO SIM and attach the antenna before powering the module.</text>
+</svg>

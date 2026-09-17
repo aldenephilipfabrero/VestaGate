@@ -1,0 +1,16 @@
+# YOLOv8 Dataset Configuration
+path: "C:/wamp64/www/school_gate/cv_training/datasets/capstone_dataset.v2"
+train: train/images
+val: valid/images
+test: test/images
+
+# Classes from the current Roboflow export
+names:
+  0: 'blackpants'
+  1: 'blackshoes'
+  2: 'id lace'
+  3: 'poloboy'
+  4: 'pologirl'
+  5: 'skirt'
+
+nc: 6
