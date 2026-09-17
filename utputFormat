@@ -3,7 +3,7 @@ Server: Werkzeug/3.1.3 Python/3.12.10
 Date: Wed, 29 Apr 2026 05:29:12 GMT
 Content-Type: application/json
 Content-Length: 82
-Access-Control-Allow-Origin: *
+Access-Control-Allow-Origin: 
 Connection: clos
 
 {"baudrate":9600,"serial_connected":true,"serial_port":"COM6","status":"running"}
